@@ -1,6 +1,7 @@
-import { Navbar } from "../Navbar"
+import { Header } from "../Header"
+
 
 export let Home = () => {
 
-    return <Navbar />
+    return <Header />
 }
