@@ -11,6 +11,7 @@ import { NewProducts } from "../NewProducts";
 import { Blogs } from "../Blogs";
 import { AppAd } from "../AppAd";
 import { Keywords } from "../Keywords";
+import { Services } from "../Services";
 
 
 export let Home = () => {
@@ -30,6 +31,7 @@ export let Home = () => {
             <Blogs />
             <AppAd />
             <Keywords />
+            <Services />
         </>
     );
 }
