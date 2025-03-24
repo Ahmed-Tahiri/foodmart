@@ -1,6 +1,5 @@
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { FaPlus, FaMinus, FaStar } from "react-icons/fa6";
-import { HiShoppingCart } from "react-icons/hi";
 import { useState } from 'react';
 export let ProductCard = ({ name, rating, img, discount, price }) => {
 
@@ -39,7 +38,7 @@ export let ProductCard = ({ name, rating, img, discount, price }) => {
                             </button>
                         </span>
                     </div>
-                    <a href="#" className="nav-link">Add to Cart <HiShoppingCart /></a>
+                    <a href="#" className="nav-link">Add to Cart</a>
                 </div>
             </div>
         </div>
