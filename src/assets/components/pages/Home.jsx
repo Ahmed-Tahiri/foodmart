@@ -8,6 +8,7 @@ import { BestSellingProducts } from "../BestSellingProducts";
 import { Subscription } from "../Subscription";
 import { MostPpularProducts } from "../mostPopularProducts";
 import { NewProducts } from "../NewProducts";
+import { Blogs } from "../Blogs";
 
 
 export let Home = () => {
@@ -24,6 +25,7 @@ export let Home = () => {
             <Subscription />
             <MostPpularProducts />
             <NewProducts />
+            <Blogs />
         </>
     );
 }
