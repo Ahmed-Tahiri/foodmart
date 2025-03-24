@@ -18,26 +18,26 @@ import RaspberriesThumb from './../images/thumb-raspberries.png';
 import TunaThumb from './../images/thumb-tuna.jpg';
 import { ProductCard } from './ProductCard';
 
-export let MostPpularProducts = () => {
+export let NewProducts = () => {
 
 
     let products = [
         {
             id: 1,
-            name: 'Fresh Tomatoes',
-            rating: '4.5',
-            price: '$12.00',
-            img: TomatoesThumb,
+            name: 'Powder Milk',
+            rating: '4.3',
+            price: '$15.00',
+            img: MilkThumb,
             discount: '',
             unit: '1 Unit'
         },
 
         {
             id: 2,
-            name: 'Tomatoes Ketchup',
-            rating: '4',
-            price: '$25.00',
-            img: TomatoeKetchupThumb,
+            name: 'Crunchy Cookies',
+            rating: '4.9',
+            price: '$24.00',
+            img: BiscuitsThumb,
             discount: '',
             unit: '1 Unit'
         },
@@ -54,30 +54,30 @@ export let MostPpularProducts = () => {
 
         {
             id: 4,
-            name: 'Fresh Raspberris',
+            name: 'Fresh Tomatoes',
             rating: '4.5',
-            price: '$10.00',
-            img: RaspberriesThumb,
+            price: '$12.00',
+            img: TomatoesThumb,
             discount: '',
             unit: '1 Unit'
         },
 
         {
             id: 5,
-            name: 'Crunchy Cookies',
-            rating: '4.9',
-            price: '$24.00',
-            img: BiscuitsThumb,
+            name: 'Tomatoes Ketchup',
+            rating: '4',
+            price: '$25.00',
+            img: TomatoeKetchupThumb,
             discount: '',
             unit: '1 Unit'
         },
 
         {
             id: 6,
-            name: 'Tomatoes Ketchup',
-            rating: '4',
-            price: '$25.00',
-            img: TomatoeKetchupThumb,
+            name: 'Fresh Raspberris',
+            rating: '4.5',
+            price: '$10.00',
+            img: RaspberriesThumb,
             discount: '',
             unit: '1 Unit'
         },
@@ -103,30 +103,30 @@ export let MostPpularProducts = () => {
         },
         {
             id: 9,
-            name: 'Tomatoes Ketchup',
-            rating: '4',
-            price: '$25.00',
-            img: TomatoeKetchupThumb,
+            name: 'Orange Juice',
+            rating: '5.0',
+            price: '$21.00',
+            img: OrangeJuiceThumb,
             discount: '',
             unit: '1 Unit'
         },
 
         {
             id: 10,
-            name: 'Fresh Raspberris',
-            rating: '4.5',
-            price: '$10.00',
-            img: RaspberriesThumb,
+            name: 'Powder Milk',
+            rating: '4.3',
+            price: '$15.00',
+            img: MilkThumb,
             discount: '',
             unit: '1 Unit'
         },
     ];
     useEffect(() => {
-        new Swiper(".popular-products-carousel", {
+        new Swiper(".new-products-carousel", {
             modules: [Navigation],
             navigation: {
-                nextEl: ".pop-products-carousel-next",
-                prevEl: ".pop-products-carousel-prev",
+                nextEl: ".new-products-carousel-next",
+                prevEl: ".new-products-carousel-prev",
             },
             breakpoints: {
                 0: {
@@ -154,12 +154,12 @@ export let MostPpularProducts = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="section-header d-flex flex-wrap justify-content-between my-5">
-                            <h2 className="section-title">Most Poular Products</h2>
+                            <h2 className="section-title">Just Arrived</h2>
                             <div className="d-flex align-items-center">
                                 <a href="#" className="btn-link text-decoration-none">View All Categories →</a>
                                 <div className="swiper-buttons d-flex gap-1">
-                                    <button className="swiper-prev products-carousel-prev pop-products-carousel-prev btn btn-primary">❮</button>
-                                    <button className="swiper-next products-carousel-next pop-products-carousel-next btn btn-primary">❯</button>
+                                    <button className="swiper-prev products-carousel-prev new-products-carousel-prev btn btn-primary">❮</button>
+                                    <button className="swiper-next products-carousel-next new-products-carousel-next btn btn-primary">❯</button>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +167,7 @@ export let MostPpularProducts = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="products-carousel popular-products-carousel swiper">
+                        <div className="products-carousel new-products-carousel swiper">
                             <div className="swiper-wrapper">
                                 {products.map((product, index) => {
                                     return <div className="swiper-slide">
