@@ -9,6 +9,7 @@ import { Subscription } from "../Subscription";
 import { MostPpularProducts } from "../mostPopularProducts";
 import { NewProducts } from "../NewProducts";
 import { Blogs } from "../Blogs";
+import { AppAd } from "../AppAd";
 
 
 export let Home = () => {
@@ -26,6 +27,7 @@ export let Home = () => {
             <MostPpularProducts />
             <NewProducts />
             <Blogs />
+            <AppAd />
         </>
     );
 }
