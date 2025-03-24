@@ -414,6 +414,8 @@ h6 {
 }
 /* category carousel */
 .category-carousel .category-item {
+  width: 220px;
+  aspect-ratio: 1;
   background: #ffffff;
   border: 1px solid #fbfbfb;
   box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04);
