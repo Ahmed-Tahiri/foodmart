@@ -79,15 +79,14 @@ export let Header = () => {
                 </div>
             </div>
 
-            {/* Navigation */}
             <div className="container-fluid">
                 <div className="row py-3">
-                    <nav className="navbar navbar-expand-lg">
+                    <nav className="navbar navbar-expand-lg d-flex justify-content-center">
                         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                             <span className="navbar-toggler-icon"></span>
                         </button>
 
-                        <div className="offcanvas offcanvas-end" id="offcanvasNavbar">
+                        <div className="offcanvas offcanvas-end w-100 px-2" id="offcanvasNavbar">
                             <div className="offcanvas-header justify-content-center">
                                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
                             </div>
