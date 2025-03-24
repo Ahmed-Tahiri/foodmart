@@ -6,6 +6,7 @@ import { TrendingProducts } from "../TrendingProducts";
 import { DiscountBanners } from "../DiscountBanners";
 import { BestSellingProducts } from "../BestSellingProducts";
 import { Subscription } from "../Subscription";
+import { MostPpularProducts } from "../mostPopularProducts";
 
 
 export let Home = () => {
@@ -20,6 +21,7 @@ export let Home = () => {
             <DiscountBanners />
             <BestSellingProducts />
             <Subscription />
+            <MostPpularProducts />
         </>
     );
 }
