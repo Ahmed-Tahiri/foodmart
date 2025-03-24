@@ -10,6 +10,7 @@ import { MostPpularProducts } from "../mostPopularProducts";
 import { NewProducts } from "../NewProducts";
 import { Blogs } from "../Blogs";
 import { AppAd } from "../AppAd";
+import { Keywords } from "../Keywords";
 
 
 export let Home = () => {
@@ -28,6 +29,7 @@ export let Home = () => {
             <NewProducts />
             <Blogs />
             <AppAd />
+            <Keywords />
         </>
     );
 }
