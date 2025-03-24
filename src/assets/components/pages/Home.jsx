@@ -1,6 +1,7 @@
 import { Banners } from "../Banner";
 import { Header } from "../Header"
 import { CategorySlider } from "../Category";
+import { NewArrival } from "../NewArrival";
 
 
 export let Home = () => {
@@ -10,6 +11,7 @@ export let Home = () => {
             <Header />
             <Banners />
             <CategorySlider />
+            <NewArrival />
         </>
     );
 }

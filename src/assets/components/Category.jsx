@@ -14,11 +14,12 @@ export let CategorySlider = () => {
     useEffect(() => {
         new Swiper(".category-carousel", {
             modules: [Navigation],
-            slidesPerView: "auto",
+            slidesPerView: 6,
             spaceBetween: 30,
+            speed: 500,
             navigation: {
-                nextEl: ".swiper-next",
-                prevEl: ".swiper-prev",
+                nextEl: ".category-carousel-next",
+                prevEl: ".category-carousel-prev",
             },
         });
     }, []);
@@ -50,10 +51,10 @@ export let CategorySlider = () => {
                                     View All Categories →
                                 </a>
                                 <div className="swiper-buttons d-flex flex-row gap-1">
-                                    <button type="button" className="swiper-prev btn btn-yellow">
+                                    <button type="button" className="category-carousel-prev swiper-prev btn btn-yellow">
                                         ❮
                                     </button>
-                                    <button type="button" className="swiper-next btn btn-yellow">
+                                    <button type="button" className="category-carousel-next swiper-next btn btn-yellow">
                                         ❯
                                     </button>
                                 </div>
