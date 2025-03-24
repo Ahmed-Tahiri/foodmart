@@ -12,6 +12,8 @@ import { Blogs } from "../Blogs";
 import { AppAd } from "../AppAd";
 import { Keywords } from "../Keywords";
 import { Services } from "../Services";
+import { Footer } from "../Footer";
+import { Copyright } from "../CopyrightText";
 
 
 export let Home = () => {
@@ -32,6 +34,8 @@ export let Home = () => {
             <AppAd />
             <Keywords />
             <Services />
+            <Footer />
+            <Copyright />
         </>
     );
 }

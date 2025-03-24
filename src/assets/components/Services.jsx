@@ -4,7 +4,37 @@ import CartSVG from './../images/foodmartSVG.svg';
 import QualitySVG from './../images/qualitySVG.svg';
 import SavingsSVG from './../images/savings.svg'
 
-export const Services = () => {
+export let Services = () => {
+
+    let servicesData = [
+        {
+            title: "Free delivery",
+            description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+            icon: CartSVG
+        },
+        {
+            title: "100% secure payment",
+            description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+            icon: SecureSVG
+        },
+        {
+            title: "Quality guarantee",
+            description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+            icon: QualitySVG
+        },
+        {
+            title: "Guaranteed savings",
+            description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+            icon: SavingsSVG
+        },
+        {
+            title: "Daily offers",
+            description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+            icon: GiftsSVG
+        }
+    ];
+
+
     return (
         <section className="py-5">
             <div className="container-fluid">
@@ -31,32 +61,3 @@ export const Services = () => {
         </section>
     );
 };
-
-const servicesData = [
-    {
-        title: "Free delivery",
-        description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
-        icon: CartSVG
-    },
-    {
-        title: "100% secure payment",
-        description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
-        icon: SecureSVG
-    },
-    {
-        title: "Quality guarantee",
-        description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
-        icon: QualitySVG
-    },
-    {
-        title: "Guaranteed savings",
-        description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
-        icon: SavingsSVG
-    },
-    {
-        title: "Daily offers",
-        description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
-        icon: GiftsSVG
-    }
-];
-
