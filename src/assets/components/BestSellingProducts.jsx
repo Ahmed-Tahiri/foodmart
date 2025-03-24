@@ -128,6 +128,20 @@ export let BestSellingProducts = () => {
                 nextEl: ".best-products-carousel-next",
                 prevEl: ".best-products-carousel-prev",
             },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                991: {
+                    slidesPerView: 4,
+                },
+                1500: {
+                    slidesPerView: 6,
+                },
+            },
             slidesPerView: 6,
             spaceBetween: 20,
             speed: 500

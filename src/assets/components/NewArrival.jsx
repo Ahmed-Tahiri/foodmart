@@ -17,10 +17,25 @@ export const NewArrival = () => {
                 modules: [Navigation],
                 spaceBetween: 30,
                 slidesPerView: 4,
+                speed: 500,
                 navigation: {
                     nextEl: ".brand-carousel-next",
                     prevEl: ".brand-carousel-prev",
                 },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    991: {
+                        slidesPerView: 3,
+                    },
+                    1500: {
+                        slidesPerView: 4,
+                    },
+                }
             });
         }
     }, []);

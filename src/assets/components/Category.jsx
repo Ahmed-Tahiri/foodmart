@@ -17,6 +17,20 @@ export let CategorySlider = () => {
             slidesPerView: 6,
             spaceBetween: 30,
             speed: 500,
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                991: {
+                    slidesPerView: 4,
+                },
+                1500: {
+                    slidesPerView: 6,
+                },
+            },
             navigation: {
                 nextEl: ".category-carousel-next",
                 prevEl: ".category-carousel-prev",

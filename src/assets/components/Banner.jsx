@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { FaArrowRight } from "react-icons/fa6";
 
 export const Banners = () => {
     return (
@@ -82,8 +83,8 @@ export const Banners = () => {
                                     <div className="content-wrapper col-md-7">
                                         <div className="categories sale mb-3 pb-3">20% off</div>
                                         <h3 className="banner-title">Fruits & Vegetables</h3>
-                                        <a href="#" className="d-flex align-items-center nav-link">
-                                            Shop Collection <svg width="24" height="24"><use xlinkHref="#arrow-right"></use></svg>
+                                        <a href="#" className="d-flex text-center align-items-center nav-link">
+                                            Shop Collection <FaArrowRight className='ms-1 fs-8' />
                                         </a>
                                     </div>
                                 </div>
@@ -97,8 +98,8 @@ export const Banners = () => {
                                     <div className="content-wrapper col-md-7">
                                         <div className="categories sale mb-3 pb-3">15% off</div>
                                         <h3 className="item-title">Baked Products</h3>
-                                        <a href="#" className="d-flex align-items-center nav-link">
-                                            Shop Collection <svg width="24" height="24"><use xlinkHref="#arrow-right"></use></svg>
+                                        <a href="#" className="d-flex text-center align-items-center nav-link">
+                                            Shop Collection <FaArrowRight className='ms-1 fs-8' />
                                         </a>
                                     </div>
                                 </div>
