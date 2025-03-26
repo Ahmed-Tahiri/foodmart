@@ -65,7 +65,7 @@ export let Header = () => {
                                     <IoMdHeartEmpty className="fs-3 fw-bold" />
                                 </a>
                             </li>
-                            <li className="d-lg-none">
+                            <li className="d-lg-none" id="shoppingCartIcon">
                                 <a href="#" className="rounded-circle bg-light p-2 mx-1 navLogo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
                                     <HiShoppingCart className="fs-3 fw-bold" />
                                 </a>
@@ -73,7 +73,7 @@ export let Header = () => {
                         </ul>
 
                         <div className="cart text-end d-none d-lg-block dropdown">
-                            <button className="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
+                            <button className="border-0 bg-transparent d-flex flex-column gap-2 lh-1" id="cartViewBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
                                 <span className="fs-6 text-muted dropdown-toggle">Your Cart</span>
                                 <span className="cart-total fs-5 fw-bold">${cartProducts.reduce((acc, prod) => acc + prod.price, 0).toFixed(2)}</span>
                             </button>

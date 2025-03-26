@@ -1,7 +1,7 @@
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { FaPlus, FaMinus, FaStar } from "react-icons/fa6";
-import { useState } from 'react';
-export let ProductCard = ({ title, rating, images, discountPercentage, price, setCartProducts, productsArr }) => {
+import { useId, useState } from 'react';
+export let ProductCard = ({ title, rating, images, productId, discountPercentage, price, setCartProducts, productsArr }) => {
     let [productPrice, setProductPrice] = useState(price);
     let [unitVal, setUnitVal] = useState(0);
     let [unit, setUnit] = useState(1);
@@ -15,17 +15,42 @@ export let ProductCard = ({ title, rating, images, discountPercentage, price, se
         }
     }
     let plusHandler = () => {
-        setProductPrice((prevVal) => prevVal + price); setUnitVal((prev) => prev + 1); if (unitVal >= 1) {
+        setUnitVal((prev) => prev + 1);
+        if (unitVal >= 1) {
             setUnit((prev) => prev + 1);
+            setProductPrice((prevVal) => prevVal + price);
         }
     }
 
-    let addToCartHandler = () => {
-        let selectedProduct = productsArr.find((product) => product.title === title);
-        if (selectedProduct) {
-            setCartProducts((prevVal) => [...prevVal, selectedProduct]);
-        }
+    let shakeAnimation = () => {
 
+        let cartBtn = document.getElementById('cartViewBtn');
+        cartBtn.classList.add('shakeEffect');
+        if (cartBtn.classList.contains('shakeEffect')) {
+            setTimeout(() => { cartBtn.classList.remove('shakeEffect') }, 500)
+        }
+        let navCartBtn = document.querySelector('#shoppingCartIcon');
+        navCartBtn.classList.add('shakeEffect');
+        if (navCartBtn.classList.contains('shakeEffect')) {
+            setTimeout(() => { navCartBtn.classList.remove('shakeEffect') }, 500)
+        }
+    }
+
+    let addToCartHandler = (prodId) => {
+        if (unitVal >= 1) {
+            let selectedProduct = productsArr.find((product) => product.productId === prodId);
+            if (selectedProduct) {
+                let newProducts = [];
+                for (let i = 0; i < unitVal; i++) {
+                    let id = Math.floor(Math.random() * 9999999) + 1;
+                    let newProduct = structuredClone(selectedProduct);
+                    newProduct.orderId = `order${id}`;
+                    newProducts.push(newProduct);
+                }
+                setCartProducts((prevVal) => [...prevVal, ...newProducts]);
+            }
+            shakeAnimation();
+        }
     };
     return (
         <div className="col">
@@ -56,7 +81,7 @@ export let ProductCard = ({ title, rating, images, discountPercentage, price, se
                             </button>
                         </span>
                     </div>
-                    <button onClick={addToCartHandler} className="nav-link">Add to Cart</button>
+                    <button onClick={() => addToCartHandler(productId)} className="btn text-dark border border-dark border-3 rounded-5 px-2">Add to Cart</button>
                 </div>
             </div>
         </div>

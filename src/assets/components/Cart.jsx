@@ -1,14 +1,19 @@
 import { useContext } from "react";
 import { CartData } from "./pages/Home";
-
+import { MdCancel } from "react-icons/md";
 export let Cart = () => {
 
-
-
     let { cartProducts, setCartProducts } = useContext(CartData);
+
+    let deleteBtnHandler = (orderId) => {
+
+
+        setCartProducts(cartProducts.filter((prod) => prod.orderId !== orderId));
+
+    }
     return (
         <div
-            className="offcanvas offcanvas-end"
+            className="offcanvas offcanvas-end cartView"
             data-bs-scroll="true"
             tabIndex="-1"
             id="offcanvasCart"
@@ -32,11 +37,14 @@ export let Cart = () => {
                     </h4>
                     <ul className="list-group mb-3">
                         {cartProducts.map((product, index) => <li className="list-group-item d-flex justify-content-between lh-sm" key={`cart${index + 1}`}>
-                            <div>
-                                <h6 className="my-0">{product.title}</h6>
-                                <small className="text-body-secondary"></small>
+
+                            <h6 className="my-0">{product.title}</h6>
+
+                            <div className="d-flex justify-content-center align-items-center">
+                                <span className="text-body-secondary">${product.price}</span>
+                                <button onClick={() => deleteBtnHandler(product.orderId)} className="cancelCart"><MdCancel /></button>
                             </div>
-                            <span className="text-body-secondary">${product.price}</span>
+
                         </li>)}
 
                         <li className="list-group-item d-flex justify-content-between">

@@ -12,7 +12,7 @@ header .container-fluid:first-of-type {
   background: white;
   position: fixed !important;
   top: 0 !important;
-  z-index: 99999999 !important;
+  z-index: 9999 !important;
 }
 header .container-fluid:last-of-type {
   background: white;
@@ -23,4 +23,56 @@ header .container-fluid:last-of-type {
 section:first-of-type {
   position: relative !important;
   top: 120px !important;
+  margin-bottom: 100px;
+}
+.cartView {
+  z-index: 99999 !important;
+}
+.shakeEffect {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateX(-10px);
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateX(10px);
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateX(-10px);
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.cancelCart {
+  color: rgb(211, 47, 47);
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  header .container-fluid:last-of-type {
+    background: white;
+    position: absolute !important;
+    top: 135px !important;
+    z-index: 999 !important;
+  }
+  section:first-of-type {
+    position: relative !important;
+    top: 150px !important;
+  }
 }

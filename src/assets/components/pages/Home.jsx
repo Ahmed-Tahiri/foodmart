@@ -25,7 +25,11 @@ export let CartProvider = ({ children }) => {
     let fetchAPI = async () => {
         try {
             let res = await axios.get('https://dummyjson.com/products');
-            setProducts(res.data.products);
+            let newProducts = res.data.products.map((prod) => ({
+                ...prod,
+                productId: `prod${Math.floor(Math.random() * 9999999) + 1}`,
+            }));
+            setProducts(newProducts);
         } catch (error) {
             console.log('Error Message: ' + error.message);
         }
@@ -33,7 +37,6 @@ export let CartProvider = ({ children }) => {
 
 
     useEffect(() => {
-
         fetchAPI();
     }, []);
 

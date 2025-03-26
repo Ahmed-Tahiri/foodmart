@@ -29,10 +29,10 @@ export let BestSellingProducts = () => {
                     slidesPerView: 4,
                 },
                 1500: {
-                    slidesPerView: 6,
+                    slidesPerView: 5,
                 },
             },
-            slidesPerView: 6,
+            slidesPerView: 5,
             spaceBetween: 20,
             speed: 500
         });
