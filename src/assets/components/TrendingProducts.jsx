@@ -2,7 +2,6 @@ import { ProductCard } from './ProductCard';
 
 
 export let TrendingProducts = ({ products }) => {
-
     return <section className="py-5">
         <div className="container-fluid">
 
@@ -28,7 +27,7 @@ export let TrendingProducts = ({ products }) => {
 
                                 <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
                                     {
-                                        products.map((product, index) => <ProductCard {...product} key={`TrendingProduct${product.id}`} />)
+                                        products.map((product, index) => <ProductCard {...product} key={"TrendingProduct" + (index + 1)} />)
                                     }
                                 </div>
                             </div>

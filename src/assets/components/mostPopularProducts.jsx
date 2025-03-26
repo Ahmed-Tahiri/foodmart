@@ -58,7 +58,7 @@ export let MostPpularProducts = ({ products }) => {
                             <div className="swiper-wrapper">
                                 {products.map((product, index) => {
                                     return <div className="swiper-slide">
-                                        <ProductCard {...product} key={`MostPopularProduct${product.id}`} />
+                                        <ProductCard {...product} key={"MostPopularProduct" + (index + 1)} />
                                     </div>
                                 })}
                             </div>

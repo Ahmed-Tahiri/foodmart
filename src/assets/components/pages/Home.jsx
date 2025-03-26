@@ -16,7 +16,7 @@ import { Services } from "../Services";
 import { Footer } from "../Footer";
 import { Copyright } from "../CopyrightText";
 import { Cart } from "../Cart";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 
 export let Home = () => {
@@ -27,7 +27,7 @@ export let Home = () => {
             let res = await axios.get('https://dummyjson.com/products');
             setProducts(res.data.products);
         } catch (error) {
-            console.log(error.message);
+            console.log('Error Message: ' + error.message);
         }
     };
 

@@ -58,7 +58,7 @@ export let NewProducts = ({ products }) => {
                             <div className="swiper-wrapper">
                                 {products.map((product, index) => {
                                     return <div className="swiper-slide">
-                                        <ProductCard {...product} key={`NewProduct${product.id}`} />
+                                        <ProductCard {...product} key={"NewProduct" + (index + 1)} />
                                     </div>
                                 })}
                             </div>
