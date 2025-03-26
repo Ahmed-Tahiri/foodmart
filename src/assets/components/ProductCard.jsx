@@ -4,15 +4,28 @@ import { useState } from 'react';
 export let ProductCard = ({ title, rating, images, discountPercentage, price, setCartProducts, productsArr }) => {
     let [productPrice, setProductPrice] = useState(price);
     let [unitVal, setUnitVal] = useState(0);
-
-    let minusHandler = () => { if (unitVal > 0) { setUnitVal((prevVal) => prevVal - 1); } if (productPrice > price) { setProductPrice((prevVal) => prevVal - price); } }
-    let plusHandler = () => { setProductPrice((prevVal) => prevVal + price); setUnitVal((prev) => prev + 1); }
+    let [unit, setUnit] = useState(1);
+    let minusHandler = () => {
+        if (unitVal > 0) { setUnitVal((prevVal) => prevVal - 1); }
+        if (productPrice > price) {
+            setProductPrice((prevVal) => prevVal - price);
+            if (unit > 1) {
+                setUnit((prev) => prev - 1);
+            }
+        }
+    }
+    let plusHandler = () => {
+        setProductPrice((prevVal) => prevVal + price); setUnitVal((prev) => prev + 1); if (unitVal >= 1) {
+            setUnit((prev) => prev + 1);
+        }
+    }
 
     let addToCartHandler = () => {
         let selectedProduct = productsArr.find((product) => product.title === title);
         if (selectedProduct) {
             setCartProducts((prevVal) => [...prevVal, selectedProduct]);
         }
+
     };
     return (
         <div className="col">
@@ -25,7 +38,7 @@ export let ProductCard = ({ title, rating, images, discountPercentage, price, se
                     </a>
                 </figure>
                 <h3>{title}</h3>
-                <span className="qty">1 Unit</span><span className="rating"><FaStar className='fs-6 mb-1 mx-1 RatingStar' /> {rating}</span>
+                <span className="qty">{unit} Unit</span><span className="rating"><FaStar className='fs-6 mb-1 mx-1 RatingStar' /> {rating}</span>
                 <span className="price">${productPrice.toFixed(2)}</span>
                 <div className="d-flex align-items-center justify-content-between">
                     <div className="input-group product-qty">

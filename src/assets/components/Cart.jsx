@@ -34,7 +34,7 @@ export let Cart = () => {
                         {cartProducts.map((product, index) => <li className="list-group-item d-flex justify-content-between lh-sm" key={`cart${index + 1}`}>
                             <div>
                                 <h6 className="my-0">{product.title}</h6>
-                                <small className="text-body-secondary">{product.description}</small>
+                                <small className="text-body-secondary"></small>
                             </div>
                             <span className="text-body-secondary">${product.price}</span>
                         </li>)}

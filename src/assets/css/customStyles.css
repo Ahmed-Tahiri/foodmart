@@ -3,3 +3,24 @@
     color: #ffc43f;
   }
 }
+
+header {
+  width: 100%;
+  position: relative;
+}
+header .container-fluid:first-of-type {
+  background: white;
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 99999999 !important;
+}
+header .container-fluid:last-of-type {
+  background: white;
+  position: absolute !important;
+  top: 80px !important;
+  z-index: 999 !important;
+}
+section:first-of-type {
+  position: relative !important;
+  top: 120px !important;
+}
