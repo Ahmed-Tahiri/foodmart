@@ -3,12 +3,21 @@ import { FaPlus, FaMinus, FaStar } from "react-icons/fa6";
 import { useState } from 'react';
 export let ProductCard = ({ title, rating, images, discountPercentage, price }) => {
 
-
+    let [productPrice, setProductPrice] = useState(price);
     let [unitVal, setUnitVal] = useState(0);
     let minusHandler = () => {
         if (unitVal > 0) {
             setUnitVal((prevVal) => prevVal - 1);
         }
+        if (productPrice > price) {
+            setProductPrice((prevVal) => prevVal - price);
+
+        }
+    }
+    let plusHandler = () => {
+        setProductPrice((prevVal) => prevVal + price);
+        setUnitVal((prev) => prev + 1)
+
     }
     return (
         <div className="col">
@@ -22,7 +31,7 @@ export let ProductCard = ({ title, rating, images, discountPercentage, price }) 
                 </figure>
                 <h3>{title}</h3>
                 <span className="qty">1 Unit</span><span className="rating"><FaStar className='fs-6 mb-1 mx-1 RatingStar' /> {rating}</span>
-                <span className="price">{price}</span>
+                <span className="price">{productPrice.toFixed(2)}</span>
                 <div className="d-flex align-items-center justify-content-between">
                     <div className="input-group product-qty">
                         <span className="input-group-btn">
@@ -33,7 +42,7 @@ export let ProductCard = ({ title, rating, images, discountPercentage, price }) 
                         </span>
                         <input type="text" id="quantity" name="quantity" className="form-control input-number" value={unitVal} onChange={() => unitVal} />
                         <span className="input-group-btn">
-                            <button type="button" className="quantity-right-plus btn btn-success btn-number" onClick={() => setUnitVal((prev) => prev + 1)}
+                            <button type="button" className="quantity-right-plus btn btn-success btn-number" onClick={plusHandler}
                                 data-type="plus">
                                 <FaPlus />
                             </button>
