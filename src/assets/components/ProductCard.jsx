@@ -1,7 +1,8 @@
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { FaPlus, FaMinus, FaStar } from "react-icons/fa6";
 import { useState } from 'react';
-export let ProductCard = ({ name, rating, img, discount, price }) => {
+export let ProductCard = ({ title, rating, images, discountPercentage, price }) => {
+
 
     let [unitVal, setUnitVal] = useState(0);
     let minusHandler = () => {
@@ -12,14 +13,14 @@ export let ProductCard = ({ name, rating, img, discount, price }) => {
     return (
         <div className="col">
             <div className="product-item">
-                <span className="badge bg-success position-absolute m-3">{discount}</span>
+                <span className="badge bg-success position-absolute m-3">-{discountPercentage}%</span>
                 <a href="#" className="btn-wishlist"><IoMdHeartEmpty className='fs-3' /></a>
                 <figure>
                     <a href="index.html" title="Product Title">
-                        <img src={img} className="tab-image" />
+                        <img src={images} className="tab-image" />
                     </a>
                 </figure>
-                <h3>{name}</h3>
+                <h3>{title}</h3>
                 <span className="qty">1 Unit</span><span className="rating"><FaStar className='fs-6 mb-1 mx-1 RatingStar' /> {rating}</span>
                 <span className="price">{price}</span>
                 <div className="d-flex align-items-center justify-content-between">

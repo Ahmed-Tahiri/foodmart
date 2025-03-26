@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Banners } from "../Banner";
 import { Header } from "../Header"
 import { CategorySlider } from "../Category";
@@ -15,22 +16,26 @@ import { Services } from "../Services";
 import { Footer } from "../Footer";
 import { Copyright } from "../CopyrightText";
 import { Cart } from "../Cart";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 export let Home = () => {
+    let [products, setProducts] = useState([]);
 
-
-    let fetchAPI = () => { };
+    let fetchAPI = async () => {
+        try {
+            let res = await axios.get('https://dummyjson.com/products');
+            setProducts(res.data.products);
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
 
     useEffect(() => {
 
         fetchAPI();
     }, [])
-
-
-
 
     return (
         <>
@@ -39,12 +44,12 @@ export let Home = () => {
             <Banners />
             <CategorySlider />
             <NewArrival />
-            <TrendingProducts />
+            <TrendingProducts products={products} />
             <DiscountBanners />
-            <BestSellingProducts />
+            <BestSellingProducts products={products} />
             <Subscription />
-            <MostPpularProducts />
-            <NewProducts />
+            <MostPpularProducts products={products} />
+            <NewProducts products={products} />
             <Blogs />
             <AppAd />
             <Keywords />

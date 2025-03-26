@@ -4,123 +4,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
-import BananaThumb from './../images/thumb-bananas.png';
-import BiscuitsThumb from './../images/thumb-biscuits.png';
-import AvocadeThumb from './../images/thumb-avocado.png';
-import CucumberThumb from './../images/thumb-cucumber.png';
-import HerbThumb from './../images/thumb-herb.jpg';
-import HoneyThumb from './../images/thumb-honey.jpg';
-import MilkThumb from './../images/thumb-milk.png';
-import TomatoesThumb from './../images/thumb-tomatoes.png';
-import TomatoeKetchupThumb from './../images/thumb-tomatoketchup.png';
-import OrangeJuiceThumb from './../images/thumb-orange-juice.png';
-import RaspberriesThumb from './../images/thumb-raspberries.png';
-import TunaThumb from './../images/thumb-tuna.jpg';
 import { ProductCard } from './ProductCard';
 
-export let NewProducts = () => {
+export let NewProducts = ({ products }) => {
 
-
-    let products = [
-        {
-            id: 1,
-            name: 'Powder Milk',
-            rating: '4.3',
-            price: '$15.00',
-            img: MilkThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 2,
-            name: 'Crunchy Cookies',
-            rating: '4.9',
-            price: '$24.00',
-            img: BiscuitsThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 3,
-            name: 'Orange Juice',
-            rating: '5.0',
-            price: '$21.00',
-            img: OrangeJuiceThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 4,
-            name: 'Fresh Tomatoes',
-            rating: '4.5',
-            price: '$12.00',
-            img: TomatoesThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 5,
-            name: 'Tomatoes Ketchup',
-            rating: '4',
-            price: '$25.00',
-            img: TomatoeKetchupThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 6,
-            name: 'Fresh Raspberris',
-            rating: '4.5',
-            price: '$10.00',
-            img: RaspberriesThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 7,
-            name: 'Orange Juice',
-            rating: '5.0',
-            price: '$21.00',
-            img: OrangeJuiceThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 8,
-            name: 'Fresh Tomatoes',
-            rating: '4.5',
-            price: '$12.00',
-            img: TomatoesThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-        {
-            id: 9,
-            name: 'Orange Juice',
-            rating: '5.0',
-            price: '$21.00',
-            img: OrangeJuiceThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-
-        {
-            id: 10,
-            name: 'Powder Milk',
-            rating: '4.3',
-            price: '$15.00',
-            img: MilkThumb,
-            discount: '',
-            unit: '1 Unit'
-        },
-    ];
     useEffect(() => {
         new Swiper(".new-products-carousel", {
             modules: [Navigation],
@@ -171,7 +58,7 @@ export let NewProducts = () => {
                             <div className="swiper-wrapper">
                                 {products.map((product, index) => {
                                     return <div className="swiper-slide">
-                                        <ProductCard {...product} key={`PopProduct${product.id}`} />
+                                        <ProductCard {...product} key={`NewProduct${product.id}`} />
                                     </div>
                                 })}
                             </div>
