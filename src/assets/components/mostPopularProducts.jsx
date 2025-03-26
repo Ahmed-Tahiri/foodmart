@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Swiper from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
 import { ProductCard } from './ProductCard';
+import { CartData } from "./pages/Home";
 
-export let MostPpularProducts = ({ products }) => {
-
+export let MostPpularProducts = () => {
+    let { products, cartProducts, setCartProducts } = useContext(CartData);
+    useEffect(() => { console.log(''); }, [cartProducts]);
     useEffect(() => {
         new Swiper(".popular-products-carousel", {
             modules: [Navigation],
@@ -58,7 +60,7 @@ export let MostPpularProducts = ({ products }) => {
                             <div className="swiper-wrapper">
                                 {products.map((product, index) => {
                                     return <div className="swiper-slide">
-                                        <ProductCard {...product} key={"MostPopularProduct" + (index + 1)} />
+                                        <ProductCard {...product} setCartProducts={setCartProducts} productsArr={products} key={"MostPopularProduct" + (index + 1)} />
                                     </div>
                                 })}
                             </div>

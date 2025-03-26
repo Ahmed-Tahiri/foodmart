@@ -16,12 +16,12 @@ import { Services } from "../Services";
 import { Footer } from "../Footer";
 import { Copyright } from "../CopyrightText";
 import { Cart } from "../Cart";
-import { useEffect, useId, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-
-export let Home = () => {
+export const CartData = createContext();
+export let CartProvider = ({ children }) => {
     let [products, setProducts] = useState([]);
-
+    let [cartProducts, setCartProducts] = useState([]);
     let fetchAPI = async () => {
         try {
             let res = await axios.get('https://dummyjson.com/products');
@@ -35,27 +35,36 @@ export let Home = () => {
     useEffect(() => {
 
         fetchAPI();
-    }, [])
+    }, []);
+
+
+    return <CartData.Provider value={{ products, cartProducts, setCartProducts }}>{children}</CartData.Provider>;
+
+};
+export let Home = () => {
+
 
     return (
         <>
-            <Cart />
-            <Header />
-            <Banners />
-            <CategorySlider />
-            <NewArrival />
-            <TrendingProducts products={products} />
-            <DiscountBanners />
-            <BestSellingProducts products={products} />
-            <Subscription />
-            <MostPpularProducts products={products} />
-            <NewProducts products={products} />
-            <Blogs />
-            <AppAd />
-            <Keywords />
-            <Services />
-            <Footer />
-            <Copyright />
+            <CartProvider>
+                <Cart />
+                <Header />
+                <Banners />
+                <CategorySlider />
+                <NewArrival />
+                <TrendingProducts />
+                <DiscountBanners />
+                <BestSellingProducts />
+                <Subscription />
+                <MostPpularProducts />
+                <NewProducts />
+                <Blogs />
+                <AppAd />
+                <Keywords />
+                <Services />
+                <Footer />
+                <Copyright />
+            </CartProvider>
         </>
     );
 }

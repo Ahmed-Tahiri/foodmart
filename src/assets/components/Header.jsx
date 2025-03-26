@@ -1,8 +1,11 @@
+import { CartData } from "./pages/Home";
+import { useContext } from "react";
 import { GoPerson } from "react-icons/go";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { HiShoppingCart } from "react-icons/hi";
 import MartLogo from './../images/logo.png';
 export let Header = () => {
+    let { cartProducts } = useContext(CartData);
     return (
         <header>
             <div className="container-fluid">
@@ -72,7 +75,7 @@ export let Header = () => {
                         <div className="cart text-end d-none d-lg-block dropdown">
                             <button className="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart">
                                 <span className="fs-6 text-muted dropdown-toggle">Your Cart</span>
-                                <span className="cart-total fs-5 fw-bold">$1290.00</span>
+                                <span className="cart-total fs-5 fw-bold">${cartProducts.reduce((acc, prod) => acc + prod.price, 0).toFixed(2)}</span>
                             </button>
                         </div>
                     </div>

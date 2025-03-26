@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { CartData } from "./pages/Home";
+
 export let Cart = () => {
+
+
+
+    let { cartProducts, setCartProducts } = useContext(CartData);
     return (
         <div
             className="offcanvas offcanvas-end"
@@ -21,33 +28,20 @@ export let Cart = () => {
                 <div className="order-md-last">
                     <h4 className="d-flex justify-content-between align-items-center mb-3">
                         <span className="text-primary">Your cart</span>
-                        <span className="badge bg-primary rounded-pill">3</span>
+                        <span className="badge bg-primary rounded-pill">{cartProducts.length}</span>
                     </h4>
                     <ul className="list-group mb-3">
-                        <li className="list-group-item d-flex justify-content-between lh-sm">
+                        {cartProducts.map((product, index) => <li className="list-group-item d-flex justify-content-between lh-sm" key={`cart${index + 1}`}>
                             <div>
-                                <h6 className="my-0">Growers cider</h6>
-                                <small className="text-body-secondary">Brief description</small>
+                                <h6 className="my-0">{product.title}</h6>
+                                <small className="text-body-secondary">{product.description}</small>
                             </div>
-                            <span className="text-body-secondary">$12</span>
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 className="my-0">Fresh grapes</h6>
-                                <small className="text-body-secondary">Brief description</small>
-                            </div>
-                            <span className="text-body-secondary">$8</span>
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 className="my-0">Heinz tomato ketchup</h6>
-                                <small className="text-body-secondary">Brief description</small>
-                            </div>
-                            <span className="text-body-secondary">$5</span>
-                        </li>
+                            <span className="text-body-secondary">${product.price}</span>
+                        </li>)}
+
                         <li className="list-group-item d-flex justify-content-between">
                             <span>Total (USD)</span>
-                            <strong>$25</strong>
+                            <strong>${cartProducts.reduce((acc, prod) => acc + prod.price, 0).toFixed(2)}</strong>
                         </li>
                     </ul>
 

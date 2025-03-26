@@ -1,15 +1,19 @@
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { FaPlus, FaMinus, FaStar } from "react-icons/fa6";
 import { useState } from 'react';
-export let ProductCard = ({ title, rating, images, discountPercentage, price }) => {
-
+export let ProductCard = ({ title, rating, images, discountPercentage, price, setCartProducts, productsArr }) => {
     let [productPrice, setProductPrice] = useState(price);
     let [unitVal, setUnitVal] = useState(0);
 
     let minusHandler = () => { if (unitVal > 0) { setUnitVal((prevVal) => prevVal - 1); } if (productPrice > price) { setProductPrice((prevVal) => prevVal - price); } }
     let plusHandler = () => { setProductPrice((prevVal) => prevVal + price); setUnitVal((prev) => prev + 1); }
 
-    let addToCartHandler = () => { };
+    let addToCartHandler = () => {
+        let selectedProduct = productsArr.find((product) => product.title === title);
+        if (selectedProduct) {
+            setCartProducts((prevVal) => [...prevVal, selectedProduct]);
+        }
+    };
     return (
         <div className="col">
             <div className="product-item">

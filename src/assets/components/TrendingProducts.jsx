@@ -1,10 +1,13 @@
+import { useContext, useEffect } from 'react';
 import { ProductCard } from './ProductCard';
+import { CartData } from './pages/Home';
 
 
-export let TrendingProducts = ({ products }) => {
+export let TrendingProducts = () => {
+    let { products, cartProducts, setCartProducts } = useContext(CartData);
+    useEffect(() => { console.log(''); }, [cartProducts]);
     return <section className="py-5">
         <div className="container-fluid">
-
             <div className="row">
                 <div className="col-md-12">
 
@@ -27,7 +30,7 @@ export let TrendingProducts = ({ products }) => {
 
                                 <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
                                     {
-                                        products.map((product, index) => <ProductCard {...product} key={"TrendingProduct" + (index + 1)} />)
+                                        products.map((product, index) => <ProductCard {...product} setCartProducts={setCartProducts} productsArr={products} key={"TrendingProduct" + (index + 1)} />)
                                     }
                                 </div>
                             </div>
