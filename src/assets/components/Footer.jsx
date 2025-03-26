@@ -24,17 +24,17 @@ export let Footer = () => {
     ];
     let socialLogo = [FbLogo, InstaLogo, AmazonLogo, YtLogo, XLogo,];
     return (
-        <footer class="py-5">
-            <div class="container-fluid">
-                <div class="row">
+        <footer className="py-5">
+            <div className="container-fluid">
+                <div className="row">
 
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-menu">
+                    <div className="col-lg-3 col-md-6 col-sm-6">
+                        <div className="footer-menu">
                             <img src={CompnayLogo} alt="logo" />
-                            <div class="social-links mt-5">
-                                <ul class="d-flex list-unstyled gap-2">
+                            <div className="social-links mt-5">
+                                <ul className="d-flex list-unstyled gap-2">
                                     {socialLogo.map((logo, index) => <li key={`Logo${index + 1}`}>
-                                        <a href="#" class="btn btn-outline-light">
+                                        <a href="#" className="btn btn-outline-light">
                                             <img src={logo} />
                                         </a>
                                     </li>)}
@@ -43,38 +43,38 @@ export let Footer = () => {
                         </div>
                     </div>
 
-                    <div class="col-md-2 col-sm-6">
-                        <div class="footer-menu">
-                            <h5 class="widget-title">Ultras</h5>
-                            <ul class="menu-list list-unstyled">
-                                {menuItems1.map((linkName, index) => <li class="menu-item" key={index + 1}> <a href="#" class="nav-link">{linkName}</a></li>)}
+                    <div className="col-md-2 col-sm-6">
+                        <div className="footer-menu">
+                            <h5 className="widget-title">Ultras</h5>
+                            <ul className="menu-list list-unstyled">
+                                {menuItems1.map((linkName, index) => <li className="menu-item" key={index + 1}> <a href="#" className="nav-link">{linkName}</a></li>)}
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-6">
-                        <div class="footer-menu">
-                            <h5 class="widget-title">Customer Service</h5>
-                            <ul class="menu-list list-unstyled">
-                                {menuItems2.map((linkName, index) => <li class="menu-item" key={index + 1}> <a href="#" class="nav-link">{linkName}</a></li>)}
+                    <div className="col-md-2 col-sm-6">
+                        <div className="footer-menu">
+                            <h5 className="widget-title">Customer Service</h5>
+                            <ul className="menu-list list-unstyled">
+                                {menuItems2.map((linkName, index) => <li className="menu-item" key={index + 1}> <a href="#" className="nav-link">{linkName}</a></li>)}
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-6">
-                        <div class="footer-menu">
-                            <h5 class="widget-title">Customer Service</h5>
-                            <ul class="menu-list list-unstyled">
-                                {menuItems2.map((linkName, index) => <li class="menu-item" key={index + 1}> <a href="#" class="nav-link">{linkName}</a></li>)}
+                    <div className="col-md-2 col-sm-6">
+                        <div className="footer-menu">
+                            <h5 className="widget-title">Customer Service</h5>
+                            <ul className="menu-list list-unstyled">
+                                {menuItems2.map((linkName, index) => <li className="menu-item" key={index + 1}> <a href="#" className="nav-link">{linkName}</a></li>)}
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-menu">
-                            <h5 class="widget-title">Subscribe Us</h5>
+                    <div className="col-lg-3 col-md-6 col-sm-6">
+                        <div className="footer-menu">
+                            <h5 className="widget-title">Subscribe Us</h5>
                             <p>Subscribe to our newsletter to get updates about our grand offers.</p>
-                            <form class="d-flex mt-3 gap-0" role="newsletter">
-                                <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address"
+                            <form className="d-flex mt-3 gap-0" role="newsletter">
+                                <input className="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address"
                                     aria-label="Email Address" />
-                                <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
+                                <button className="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
                             </form>
                         </div>
                     </div>

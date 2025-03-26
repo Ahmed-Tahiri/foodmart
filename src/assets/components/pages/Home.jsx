@@ -14,12 +14,27 @@ import { Keywords } from "../Keywords";
 import { Services } from "../Services";
 import { Footer } from "../Footer";
 import { Copyright } from "../CopyrightText";
+import { Cart } from "../Cart";
+import { useEffect } from "react";
 
 
 export let Home = () => {
 
+
+    let fetchAPI = () => { };
+
+
+    useEffect(() => {
+
+        fetchAPI();
+    }, [])
+
+
+
+
     return (
         <>
+            <Cart />
             <Header />
             <Banners />
             <CategorySlider />
