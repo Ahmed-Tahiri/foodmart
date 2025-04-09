@@ -31,6 +31,10 @@ export let Footer = () => {
                     <div className="col-lg-3 col-md-6 col-sm-6">
                         <div className="footer-menu">
                             <img src={CompnayLogo} alt="logo" />
+                            <div className="support-box text-start d-none d-xl-flex flex-row align-items-center justify-content-start mt-2 gap-1">
+                                <span className="fs-6 text-muted">For Support?</span>
+                                <h5 className="mb-0">+980-34984089</h5>
+                            </div>
                             <div className="social-links mt-5">
                                 <ul className="d-flex list-unstyled gap-2">
                                     {socialLogo.map((logo, index) => <li key={`Logo${index + 1}`}>

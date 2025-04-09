@@ -28,7 +28,7 @@ export let TrendingProducts = () => {
                         <div className="tab-content" id="nav-tabContent">
                             <div className="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
 
-                                <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                                <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
                                     {
                                         products.map((product, index) => <ProductCard {...product} setCartProducts={setCartProducts} productsArr={products} key={"TrendingProduct" + (index + 1)} />)
                                     }

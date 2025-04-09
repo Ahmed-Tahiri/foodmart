@@ -1,7 +1,9 @@
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { FaPlus, FaMinus, FaStar } from "react-icons/fa6";
-import { useId, useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartData } from './pages/Home';
 export let ProductCard = ({ title, rating, images, productId, discountPercentage, price, setCartProducts, productsArr }) => {
+    let { setModalData, setIsOpen } = useContext(CartData);
     let [productPrice, setProductPrice] = useState(price);
     let [unitVal, setUnitVal] = useState(0);
     let [unit, setUnit] = useState(1);
@@ -52,15 +54,19 @@ export let ProductCard = ({ title, rating, images, productId, discountPercentage
             shakeAnimation();
         }
     };
+
+    let imgClickHandler = (prodId) => {
+        let currentProd = productsArr.find((prod) => prod.productId === prodId);
+        setModalData([currentProd]);
+        setIsOpen(true);
+    }
     return (
         <div className="col">
             <div className="product-item">
                 <span className="badge bg-success position-absolute m-3">-{discountPercentage}%</span>
                 <a href="#" className="btn-wishlist"><IoMdHeartEmpty className='fs-3' /></a>
                 <figure>
-                    <a href="index.html" title="Product Title">
-                        <img src={images} className="tab-image" />
-                    </a>
+                    <img src={images} className="tab-image" onClick={() => imgClickHandler(productId)} />
                 </figure>
                 <h3>{title}</h3>
                 <span className="qty">{unit} Unit</span><span className="rating"><FaStar className='fs-6 mb-1 mx-1 RatingStar' /> {rating}</span>

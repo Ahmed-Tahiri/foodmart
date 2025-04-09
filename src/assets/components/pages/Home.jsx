@@ -17,11 +17,15 @@ import { Footer } from "../Footer";
 import { Copyright } from "../CopyrightText";
 import { Cart } from "../Cart";
 import { createContext, useContext, useEffect, useState } from "react";
+import { Modal } from "../modal";
 
 export const CartData = createContext();
 export let CartProvider = ({ children }) => {
     let [products, setProducts] = useState([]);
     let [cartProducts, setCartProducts] = useState([]);
+    let [isOpen, setIsOpen] = useState(false);
+    let [modalData, setModalData] = useState([]);
+
     let fetchAPI = async () => {
         try {
             let res = await axios.get('https://dummyjson.com/products');
@@ -34,14 +38,12 @@ export let CartProvider = ({ children }) => {
             console.log('Error Message: ' + error.message);
         }
     };
-
-
     useEffect(() => {
         fetchAPI();
     }, []);
 
 
-    return <CartData.Provider value={{ products, cartProducts, setCartProducts }}>{children}</CartData.Provider>;
+    return <CartData.Provider value={{ products, cartProducts, setCartProducts, isOpen, setIsOpen, modalData, setModalData }}>{children}</CartData.Provider>;
 
 };
 export let Home = () => {
@@ -55,6 +57,7 @@ export let Home = () => {
                 <Banners />
                 <CategorySlider />
                 <NewArrival />
+                <Modal />
                 <TrendingProducts />
                 <DiscountBanners />
                 <BestSellingProducts />
