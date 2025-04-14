@@ -3,7 +3,7 @@
   font-weight: 500;
 }
 .modal {
-  top: 70% !important;
+  top: 62% !important;
 }
 .productDescription {
   font-size: 0.9rem;
@@ -20,5 +20,102 @@
     color: rgb(44, 44, 44);
     font-size: 0.9rem;
     font-weight: 600;
+  }
+}
+.modalTextContent {
+  height: 500px !important;
+  & .userDetails {
+    > p {
+      color: rgb(66, 66, 66);
+    }
+    > p:first-of-type {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    > p:last-of-type {
+      font-size: 0.65rem;
+      margin-top: -1.2rem;
+    }
+  }
+}
+.ratingStar {
+  margin-top: -3rem;
+  color: rgb(255, 199, 15);
+}
+.modalMain .modal-dialog {
+  height: 800px !important;
+
+  min-width: 700px !important;
+  min-width: 800px !important;
+  flex: 0 0 auto !important;
+}
+
+.zoomContainer {
+  overflow: visible !important;
+}
+
+.zoomContainer .iiz__zoom-img {
+  top: 0 !important;
+  left: calc(100% + 10px) !important;
+}
+.swiper-slide > img {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}
+
+@media screen and (max-width: 576px) {
+  .modal {
+    top: 70% !important;
+  }
+  .iiz {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .modalMain .modal-dialog {
+    height: 800px !important;
+
+    min-width: 330px !important;
+    min-width: 350px !important;
+    flex: 0 0 auto !important;
+  }
+  .prodImgsContainer .swiper-wrapper {
+    height: 500px !important;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .modal {
+    top: 70% !important;
+  }
+  .iiz {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .modalMain .modal-dialog {
+    height: 800px !important;
+
+    min-width: 500px !important;
+    min-width: 550px !important;
+    flex: 0 0 auto !important;
+  }
+  .prodImgsContainer .swiper-wrapper {
+    height: 500px !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 998px) {
+  .modal {
+    top: 70% !important;
+  }
+  .iiz {
+    width: 350px !important;
+    height: 350px !important;
+  }
+  .modalMain .modal-dialog {
+    height: 800px !important;
+
+    min-width: 600px !important;
+    min-width: 650px !important;
+    flex: 0 0 auto !important;
+  }
+  .prodImgsContainer .swiper-wrapper {
+    height: 500px !important;
   }
 }

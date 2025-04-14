@@ -12,7 +12,7 @@ export let Header = () => {
                 <div className="row py-3 border-bottom">
                     <div className="col-sm-4 col-lg-3 text-center text-sm-start">
                         <div className="main-logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src={MartLogo} alt="logo" className="img-fluid" />
                             </a>
                         </div>

@@ -2,7 +2,7 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 import { FaPlus, FaMinus, FaStar } from "react-icons/fa6";
 import { useContext, useState } from 'react';
 import { CartData } from './pages/Home';
-export let ProductCard = ({ title, rating, images, productId, discountPercentage, price, setCartProducts, productsArr }) => {
+export let ProductCard = ({ title, rating, images, productId, discountPercentage, price, setCartProducts, productsArr, thumbnail }) => {
     let { setModalData, setIsOpen } = useContext(CartData);
     let [productPrice, setProductPrice] = useState(price);
     let [unitVal, setUnitVal] = useState(0);
@@ -66,7 +66,7 @@ export let ProductCard = ({ title, rating, images, productId, discountPercentage
                 <span className="badge bg-success position-absolute m-3">-{discountPercentage}%</span>
                 <a href="#" className="btn-wishlist"><IoMdHeartEmpty className='fs-3' /></a>
                 <figure>
-                    <img src={images} className="tab-image" onClick={() => imgClickHandler(productId)} />
+                    <img src={thumbnail} className="tab-image" onClick={() => imgClickHandler(productId)} />
                 </figure>
                 <h3>{title}</h3>
                 <span className="qty">{unit} Unit</span><span className="rating"><FaStar className='fs-6 mb-1 mx-1 RatingStar' /> {rating}</span>
