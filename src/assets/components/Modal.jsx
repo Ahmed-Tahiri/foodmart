@@ -111,7 +111,7 @@ export let Modal = () => {
                 <div className="modal-dialog">
                     <div className="modal-content rounded-4 shadow">
                         <div className="modal-header p-5 pb-4 border-bottom-0">
-                            <h1 className="fw-bold mb-0 fs-2">Product Details</h1>
+                            <h1 className="fw-bold mb-0 fs-2 productDetailHeading">Product Details</h1>
                             <button
                                 onClick={closeBtnHandler}
                                 type="button"

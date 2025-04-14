@@ -63,6 +63,9 @@
 }
 
 @media screen and (max-width: 576px) {
+  .productDetailHeading {
+    font-size: 1.2rem;
+  }
   .modal {
     top: 70% !important;
   }
