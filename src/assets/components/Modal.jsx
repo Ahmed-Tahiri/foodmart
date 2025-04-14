@@ -68,7 +68,7 @@ export let Modal = () => {
                         spaceBetween: 90
                     },
                     1500: {
-                        spaceBetween: 100
+                        spaceBetween: 120
                     },
                 }
             });
@@ -173,7 +173,7 @@ export let Modal = () => {
                                                         <p className='reviewerName'>{review.reviewerName}</p>
                                                         <p className='reviewerEmail'>{review.reviewerEmail}</p>
                                                     </div>
-                                                    <p className='text-dark'>{review.comment}</p>
+                                                    <p className='text-dark userComment'>{review.comment}</p>
                                                     <p className='text-dark'>{renderStars(review.rating)}</p>
                                                 </div>
                                             </div>

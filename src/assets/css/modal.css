@@ -59,7 +59,7 @@
   left: calc(100% + 10px) !important;
 }
 .swiper-slide > img {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 8px 3px 3px 0px !important;
 }
 
 @media screen and (max-width: 576px) {
@@ -80,6 +80,9 @@
   .prodImgsContainer .swiper-wrapper {
     height: 500px !important;
   }
+  .userComment {
+    font-size: 0.8rem;
+  }
 }
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .modal {
@@ -99,6 +102,9 @@
   .prodImgsContainer .swiper-wrapper {
     height: 500px !important;
   }
+  .userComment {
+    font-size: 0.8rem;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 998px) {
   .modal {
@@ -117,5 +123,8 @@
   }
   .prodImgsContainer .swiper-wrapper {
     height: 500px !important;
+  }
+  .userComment {
+    font-size: 0.9rem;
   }
 }
