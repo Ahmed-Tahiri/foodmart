@@ -139,7 +139,7 @@ export let Modal = () => {
                                             ))}
                                         </div>
                                     </div>
-                                    <InnerImageZoom src={zoomImg} width={450} zoomType="hover" zoomPreload={true} zoomScale={0.4} className='ms-5' />
+                                    <InnerImageZoom src={zoomImg} width={440} zoomType="hover" zoomPreload={true} zoomScale={0.4} className='ms-5' />
                                 </div>
 
                             </div>
